@@ -57,6 +57,9 @@ class MqttMessage {
     will.retained = false;
     if (this.client && this.client.isConnected()) this.client.send(will);
   };
+  close = () => {
+    this.client.disconnect();
+  };
 }
 
 export default MqttMessage;
